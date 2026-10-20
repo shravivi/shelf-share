@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shelf Share: neighborhood lending library</title>
+<meta name="description" content="Track tools, books and gear your neighbors share. Works offline, no account needed.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+  <h1>Shelf Share</h1>
+  <p>One list for everything your block lends out: ladders, drills, books, camping gear. See what is free and who has the rest.</p>
+</header>
+<main>
+  <form id="add" class="card">
+    <h2>Add something to the shelf</h2>
+    <label>Item <input name="name" required maxlength="60" placeholder="Cordless drill"></label>
+    <label>Category
+      <select name="category"><option>Tools</option><option>Books</option><option>Kitchen</option><option>Outdoors</option><option>Kids</option><option>Other</option></select>
+    </label>
+    <label>Owner <input name="owner" required maxlength="40" placeholder="Maria, #12"></label>
+    <button class="primary">Add item</button>
+  </form>
+
+  <section>
+    <div class="bar">
+      <input id="q" type="search" placeholder="Search items, owners, borrowers" aria-label="Search">
+      <select id="filter" aria-label="Filter">
+        <option value="all">Everything</option><option value="free">Available now</option><option value="out">Checked out</option><option value="late">Overdue</option>
+      </select>
+    </div>
+    <p id="count" aria-live="polite"></p>
+    <ul id="list"></ul>
+    <div class="tools">
+      <button id="export">Export backup</button>
+      <label class="btn">Import backup <input id="import" type="file" accept="application/json" hidden></label>
+    </div>
+    <p class="note">Data is stored in this browser only. Export a backup to share the list with neighbors.</p>
+  </section>
+</main>
+
+<dialog id="lend">
+  <form method="dialog" id="lendForm">
+    <h2 id="lendTitle">Lend item</h2>
+    <label>Borrower <input name="who" required maxlength="40"></label>
+    <label>Due back <input name="due" type="date" required></label>
+    <div class="row"><button value="cancel" formnovalidate>Cancel</button><button class="primary" value="ok">Check out</button></div>
+  </form>
+</dialog>
+<script src="app.js"></script>
+</body>
+</html>

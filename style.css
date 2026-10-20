@@ -1,0 +1,26 @@
+:root{--bg:#eef3ef;--card:#fff;--ink:#1d2b2a;--mute:#5b6b69;--teal:#1f7a6d;--late:#b4380a;--line:#cfdad5}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.5 "Trebuchet MS","Gill Sans",sans-serif}
+header,main{max-width:900px;margin:0 auto;padding:0 20px}
+header{padding-top:40px}
+h1{font:700 clamp(2.2rem,7vw,3.6rem)/1 Georgia,serif;margin:0;letter-spacing:-.03em;color:var(--teal)}
+header p{max-width:60ch;color:var(--mute)}
+main{display:grid;gap:24px;padding-bottom:60px;grid-template-columns:280px 1fr;align-items:start}
+@media(max-width:760px){main{grid-template-columns:1fr}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:12px}
+h2{font-size:1.05rem;margin:0}
+label{display:grid;gap:4px;font-size:.9rem;color:var(--mute)}
+input,select{font:inherit;padding:.5rem .6rem;border:1px solid var(--line);border-radius:8px;background:#fff;color:var(--ink);min-width:0}
+button,.btn{font:inherit;padding:.5rem .9rem;border-radius:8px;border:1px solid var(--line);background:#fff;color:var(--ink);cursor:pointer;display:inline-block}
+.primary{background:var(--teal);color:#fff;border-color:var(--teal)}
+button:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #7fd6c2;outline-offset:1px}
+.bar{display:flex;gap:8px}.bar input{flex:1}
+ul{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+li{background:var(--card);border:1px solid var(--line);border-left:6px solid var(--teal);border-radius:10px;padding:12px 14px;display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
+li.out{border-left-color:#c9a227}li.late{border-left-color:var(--late)}
+li strong{display:block}li small{color:var(--mute)}
+li.late small.status{color:var(--late);font-weight:700}
+.tools{display:flex;gap:8px;margin-top:18px}
+.note,#count{color:var(--mute);font-size:.9rem}
+dialog{border:1px solid var(--line);border-radius:14px;padding:20px;min-width:min(340px,90vw)}
+dialog form{display:grid;gap:12px}.row{display:flex;gap:8px;justify-content:flex-end}
